@@ -7,20 +7,24 @@
             <nav-bar-component />
           </div>
         </div>
-        <h1 class="title-big">For your pleasure</h1>
+        <header-title-component :title="title" />
       </div>
     </div>
     <section class="shop">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 offset-2">
-            <img class="shop__girl" src="img/coffee_goods.jpg" alt="girl" />
+            <img
+              class="shop__girl"
+              src="@/assets/img/coffee_goods.jpg"
+              alt="girl"
+            />
           </div>
           <div class="col-lg-4">
             <div class="title">About our beans</div>
             <img
               class="beanslogo"
-              src="logo/Beans_logo_dark.svg"
+              src="@/assets/logo/Beans_logo_dark.svg"
               alt="Beans logo"
             />
             <div class="shop__text">
@@ -49,12 +53,42 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <product-card />
-              <product-card />
-              <product-card />
-              <product-card />
-              <product-card />
-              <product-card />
+              <product-card
+                classItem="shop__item"
+                :name="cards[0].title"
+                :price="cards[0].price"
+                :image="cards[0].icon"
+              />
+              <product-card
+                classItem="shop__item"
+                :name="cards[1].title"
+                :price="cards[1].price"
+                :image="cards[1].icon"
+              />
+              <product-card
+                classItem="shop__item"
+                :name="cards[2].title"
+                :price="cards[2].price"
+                :image="cards[2].icon"
+              />
+              <product-card
+                classItem="shop__item"
+                :name="cards[3].title"
+                :price="cards[3].price"
+                :image="cards[3].icon"
+              />
+              <product-card
+                classItem="shop__item"
+                :name="cards[4].title"
+                :price="cards[4].price"
+                :image="cards[4].icon"
+              />
+              <product-card
+                classItem="shop__item"
+                :name="cards[5].title"
+                :price="cards[5].price"
+                :image="cards[5].icon"
+              />
             </div>
           </div>
         </div>
@@ -66,51 +100,53 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue';
 import ProductCard from '@/components/ProductCard.vue';
+import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue';
 export default {
-  components: { NavBarComponent, ProductCard },
+  components: { NavBarComponent, ProductCard, HeaderTitleComponent },
   data() {
     return {
+      title: 'For your pleasure',
       cards: [
         {
           id: '0',
           title: 'Solimo Coffee Beans 2kg',
           country: 'Brazil',
-          price: '10.73$',
+          price: 10.73,
           icon: 'coffee-3.jpg',
         },
         {
           id: '1',
           title: 'Presto Coffee Beans 1kg',
           country: 'Brazil',
-          price: '15.99$',
+          price: 15.99,
           icon: 'coffee-2.jpg',
         },
         {
           id: '2',
           title: 'AROMISTICO Coffee 1kg',
           country: 'Brazil',
-          price: '6.99$',
+          price: 6.99,
           icon: 'coffee-1.jpg',
         },
         {
           id: '3',
           title: 'Presto Coffee Beans 1kg',
           country: 'Brazil',
-          price: '10.73$',
+          price: 10.73,
           icon: 'coffee-3.jpg',
         },
         {
           id: '4',
           title: 'Solimo Coffee Beans 2kg',
           country: 'Brazil',
-          price: '8.73$',
+          price: 8.73,
           icon: 'coffee-2.jpg',
         },
         {
           id: '5',
           title: 'Solimo Coffee Beans 2kg',
           country: 'Brazil',
-          price: '12.73$',
+          price: 12.77,
           icon: 'coffee-1.jpg',
         },
       ],

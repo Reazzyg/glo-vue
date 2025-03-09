@@ -7,7 +7,7 @@
             <nav-bar-component />
           </div>
         </div>
-        <h1 class="title-big">Contact us</h1>
+        <header-title-component :title="title" />
       </div>
     </div>
     <section class="contacts">
@@ -17,7 +17,7 @@
             <div class="title mt-5">Tell us about your tastes</div>
             <img
               class="beanslogo mt-5"
-              src="logo/Beans_logo_dark.svg"
+              src="@/assets/logo/Beans_logo_dark.svg"
               alt="Beans logo"
             />
 
@@ -88,7 +88,13 @@
 
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue';
+import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue';
 export default {
-  components: { NavBarComponent },
+  components: { NavBarComponent, HeaderTitleComponent },
+  data() {
+    return {
+      title: 'Contact us',
+    };
+  },
 };
 </script>
