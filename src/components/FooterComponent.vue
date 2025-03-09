@@ -4,28 +4,21 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
-            <li class="footer__item">
-              <router-link :to="links[0].link">
-                <img
-                  :src="require(`@/assets/logo/${links[0].icon}`)"
-                  :alt="links[0].icon"
-                />
-              </router-link>
-            </li>
             <nav-bar-item-component
+              :link="links.footer.link"
               className="footer__item"
-              :link="links[1].link"
-              :text="links[1].text"
-            />
+            >
+              <img
+                :src="require(`@/assets/logo/${links.footer.icon}`)"
+                :alt="links.footer.icon"
+              />
+            </nav-bar-item-component>
+
             <nav-bar-item-component
+              v-for="link in links.other"
               className="footer__item"
-              :link="links[2].link"
-              :text="links[2].text"
-            />
-            <nav-bar-item-component
-              className="footer__item"
-              :link="links[3].link"
-              :text="links[3].text"
+              :link="link.link"
+              :text="link.text"
             />
           </ul>
         </div>
@@ -45,28 +38,26 @@ export default {
   components: { NavBarItemComponent },
   data() {
     return {
-      links: [
-        {
-          id: '0',
-          link: '/',
-          icon: 'Logo_black.svg',
-        },
-        {
-          id: '1',
-          text: 'Our coffee',
-          link: '/our-coffe',
-        },
-        {
-          id: '2',
-          text: 'For your pleasure',
-          link: '/our-goods',
-        },
-        {
-          id: '3',
-          text: 'Contact us',
-          link: '/our-contacts',
-        },
-      ],
+      links: {
+        footer: { id: '0', link: '/', icon: 'Logo_black.svg' },
+        other: [
+          {
+            id: '1',
+            text: 'Our coffee',
+            link: '/our-coffe',
+          },
+          {
+            id: '2',
+            text: 'For your pleasure',
+            link: '/our-goods',
+          },
+          {
+            id: '3',
+            text: 'Contact us',
+            link: '/our-contacts',
+          },
+        ],
+      },
     };
   },
 };

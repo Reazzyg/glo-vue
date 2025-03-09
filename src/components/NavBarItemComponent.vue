@@ -1,6 +1,10 @@
 <template>
   <li :class="className">
-    <router-link :to="link">{{ text }}</router-link>
+    <router-link :to="link">
+      {{ text }}
+
+      <slot></slot>
+    </router-link>
   </li>
 </template>
 <script>
@@ -12,7 +16,6 @@ export default {
     },
     text: {
       type: String,
-      required: true,
     },
 
     className: {
