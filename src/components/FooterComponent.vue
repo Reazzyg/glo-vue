@@ -6,7 +6,7 @@
           <ul class="footer d-flex flex-wrap">
             <li class="footer__item">
               <router-link to="/">
-                <img src="@/assets/logo/Logo.svg" alt="logo" />
+                <img src="@/assets/logo/Logo_black.svg" alt="logo" />
               </router-link>
             </li>
             <li class="footer__item">
