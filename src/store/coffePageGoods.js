@@ -3,7 +3,7 @@ const coffePageGoods = {
     coffePageGoods: [
       {
         id: '0',
-        title: 'Solimo Coffee Beans 2kg',
+        title: '123123Solimo Coffee Beans 2kg',
         country: 'Brazil',
         price: 10.73,
         icon: 'coffee-3.jpg',
@@ -48,6 +48,9 @@ const coffePageGoods = {
   getters: {
     getCoffePageGoods(state) {
       return state.coffePageGoods;
+    },
+    getCoffeeById(state) {
+      return (id) => state.coffePageGoods.find((card) => card.id === id);
     },
   },
 };
